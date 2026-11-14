@@ -9,7 +9,7 @@ This distribution adds local launchers and authenticated HTTPS deployment to the
 - **Windows on this machine.** The WSL2 shortcut opens the existing workbench at http://127.0.0.1:8765.
 - **Portable Windows.** The desktop ZIP includes a launcher for Docker running Linux containers.
 - **macOS Intel and Apple Silicon.** The corresponding desktop archives include launchers and Linux images for Docker Desktop. Actual Mac installation is unverified.
-- **Linux.** The desktop archive works with Docker Engine. The amd64 installation passed on Ubuntu under WSL2. The arm64 image built and imported the app under emulation. The parser isolation probe needs native arm64 verification.
+- **Linux.** The desktop archive works with Docker Engine. The amd64 installation passed on Ubuntu under WSL2 with Windows Chrome. Both amd64 and arm64 passed the same distribution integration test on native Ubuntu runners.
 
 Each portable installation stores data in a Docker volume. Keep the volume when updating. All desktop ports bind to 127.0.0.1. The existing Windows workbench and portable desktop container use separate stores.
 
