@@ -1,12 +1,18 @@
 # Retrofit Evidence | School Energy Research Assistant
 
-Retrofit Evidence helps facilities teams review reports on school energy upgrades. Search public PDFs, check the original page, and export a draft with citations.
+**Check where a school energy savings claim came from before you use it in a recommendation.**
 
-![The app shows a search result and highlights a search result on the original PDF page](docs/images/evidence-view.png)
+School energy reports can show energy savings and cost savings side by side. When a brief drops the heading or footnote, a reviewer can mistake one figure for the other.
+
+Retrofit Evidence helps facilities teams find evidence in public PDFs and check it on the original page. When you add a result to a draft, the export keeps its source, page, and any linked notes.
+
+**Example.** The sample report shows a 22.2% reduction in energy use and a 21.3% reduction in energy cost. Both figures are estimates from a model. The screenshot shows where the energy-use figure came from. The exported draft lets a reviewer trace it back to that page.
+
+![The app highlights the 22.2% energy-use figure on the original sample page](docs/images/evidence-view.png)
 
 *Screenshot from the working app with a sample PDF.*
 
-**[Try the sample](docs/run-locally.md#try-the-sample)** · **[See an exported draft](examples/sample-draft.md)** · **[Read the design notes](docs/design.md)** · **[View test results](evidence/distribution-verification.md)**
+**[Try the sample](docs/run-locally.md#try-the-sample)** · **[See an exported draft](examples/sample-draft.md)** · **[See how the app keeps source links](docs/design.md)** · **[View test results](evidence/distribution-verification.md)**
 
 ## What the app does
 
