@@ -1,0 +1,8 @@
+**
+!deploy
+!deploy/runtime.lock
+!deploy/gateway.py
+!retrofit
+!retrofit/**
+**/__pycache__
+**/*.pyc

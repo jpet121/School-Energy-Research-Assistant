@@ -1,0 +1,70 @@
+{
+  "version": "157.0.8103.51",
+  "checks": [
+    {
+      "id": "AC-001.2-N",
+      "status": "PASS",
+      "detail": "Unauthenticated request denied on the running loopback service."
+    },
+    {
+      "id": "J01",
+      "status": "PASS",
+      "detail": "Browser staged, extracted, viewed, reviewed and published a real local PDF fixture."
+    },
+    {
+      "id": "AX_EVIDENCE",
+      "status": "PASS",
+      "detail": "Chrome exposed the evidence dialog, qualifier control and highlighted excerpt image with accessible names."
+    },
+    {
+      "id": "AC-022.1-P",
+      "status": "PASS",
+      "detail": "Keyboard navigation opened research and evidence, reached the qualifier, stayed within the dialog and returned focus on Escape."
+    },
+    {
+      "id": "AC-010.3-N",
+      "status": "PASS",
+      "detail": "Exact hosted input reviewed with confirmation disabled and local work still available."
+    },
+    {
+      "id": "VX-08/VX-13",
+      "status": "PASS",
+      "detail": "Actual browser downloads agree on lineage and flag edited source-associated text."
+    },
+    {
+      "id": "KEYBOARD_DEFAULT",
+      "status": "PASS",
+      "detail": "Tab focus and Enter completed search, qualifier inspection, draft creation and both exports."
+    },
+    {
+      "id": "ZOOM_200",
+      "status": "PASS",
+      "detail": {
+        "innerWidth": 711,
+        "devicePixelRatio": 2,
+        "scrollWidth": 711,
+        "keyboard_search_evidence_and_download": true
+      }
+    },
+    {
+      "id": "ZOOM_400",
+      "status": "PASS",
+      "detail": {
+        "innerWidth": 355,
+        "devicePixelRatio": 4,
+        "scrollWidth": 355,
+        "keyboard_search_evidence_and_download": true
+      }
+    },
+    {
+      "id": "VX-16/VX-17",
+      "status": "PASS",
+      "detail": "Browser historical download retains saved content and mappings, and new lexical search excludes the withdrawn edition."
+    },
+    {
+      "id": "BROWSER_LOCAL",
+      "status": "PASS",
+      "detail": "No browser page errors or remote page requests. Saved draft reopened after reload."
+    }
+  ]
+}

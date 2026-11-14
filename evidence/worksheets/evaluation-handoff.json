@@ -1,0 +1,42 @@
+{
+  "status": "UNASSIGNED_NOT_FROZEN",
+  "corpus_snapshot_sha256": null,
+  "author": null,
+  "reviewer_custodian": null,
+  "private_custody_evidence_reference": null,
+  "gold_sha256": null,
+  "labels_version": null,
+  "cases_per_split": 90,
+  "splits": [
+    "development",
+    "held_out"
+  ],
+  "subtypes_each_15": [
+    "direct",
+    "multi_passage",
+    "table",
+    "unanswerable",
+    "ambiguous_conflicting",
+    "adversarial"
+  ],
+  "held_out_repetitions": [
+    1,
+    2,
+    3
+  ],
+  "required_recall_each": {
+    "overall": 0.9,
+    "table": 0.8
+  },
+  "diagnostics": {
+    "returned_precision": 0.7,
+    "ranked_precision": 0.85,
+    "reference_timing_requests": 200
+  },
+  "development_comparison_paths": [],
+  "frozen_selection_sha256": null,
+  "raw_repetition_paths": [],
+  "adjudication_reference": null,
+  "exposure_disposition": null,
+  "owner_acceptance": null
+}

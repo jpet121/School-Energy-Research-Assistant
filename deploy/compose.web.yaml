@@ -1,0 +1,33 @@
+services:
+  workbench:
+    image: ${RETROFIT_IMAGE:-retrofit-evidence:0.2.0}
+    environment:
+      RETROFIT_PUBLIC_ORIGIN: https://${RETROFIT_DOMAIN:?Set RETROFIT_DOMAIN}
+    volumes:
+      - workspace:/data
+      - type: bind
+        source: ${RETROFIT_PASSWORD_FILE:?Set RETROFIT_PASSWORD_FILE}
+        target: /run/secrets/retrofit-web-password
+        read_only: true
+    read_only: true
+    tmpfs:
+      - /tmp:rw,noexec,nosuid,size=256m
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+    restart: unless-stopped
+  edge:
+    image: ${RETROFIT_EDGE_IMAGE:-caddy:2-alpine@sha256:003a97808e781aa9f7e75cc2f43d34d461099031faf5e20faefb9f61126836f0}
+    environment:
+      RETROFIT_DOMAIN: ${RETROFIT_DOMAIN:?Set RETROFIT_DOMAIN}
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - tls-data:/data
+      - tls-config:/config
+    restart: unless-stopped
+volumes:
+  workspace:
+  tls-data:
+  tls-config:

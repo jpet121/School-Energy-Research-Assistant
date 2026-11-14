@@ -1,0 +1,7 @@
+{$RETROFIT_DOMAIN} {
+    header Strict-Transport-Security "max-age=31536000"
+    request_body {
+        max_size 32MB
+    }
+    reverse_proxy workbench:8765
+}

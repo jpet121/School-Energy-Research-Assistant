@@ -1,0 +1,1 @@
+PASS http://127.0.0.1:8767: authorization, origin and token checks, sandbox probe, PDF render, review, publish, lexical retrieval, draft and export. Generation disabled.

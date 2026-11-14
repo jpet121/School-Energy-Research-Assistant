@@ -1,0 +1,109 @@
+{
+  "archive": "RETROFIT_EVIDENCE_M1_REPAIR_v0.1.5.zip",
+  "archive_sha256": "23ce65f2056e64b31f49df7c94b24950df422ff30e0e7f88fe06aa45b6677986",
+  "source_identity": "sha256:f85684048b3bf8f83cc04382e80d38f7a0103b8cc77c074cd4aa7bea971640c1",
+  "fresh_extraction": "C:\\Users\\jpetr\\factory-work\\retrofit-intake-v0.1.3\\outputs\\fresh-v0.1.5\\retrofit-evidence-m1",
+  "status": "PASS_INTEGRITY_BUILD_FULL_PYTHON_COVERAGE_TYPES_DEFAULT_BROWSER_FIDELITY",
+  "checks": [
+    {
+      "check": "payload-before",
+      "exit_code": 0
+    },
+    {
+      "check": "typescript-check",
+      "exit_code": 0
+    },
+    {
+      "check": "typescript-rebuild",
+      "exit_code": 0
+    },
+    {
+      "check": "payload-after-rebuild",
+      "exit_code": 0
+    },
+    {
+      "check": "python-fresh-tests",
+      "exit_code": 0
+    },
+    {
+      "check": "fresh-coverage-combine",
+      "exit_code": 0
+    },
+    {
+      "check": "fresh-coverage-report",
+      "exit_code": 0
+    },
+    {
+      "check": "fresh-coverage-json",
+      "exit_code": 0
+    },
+    {
+      "check": "fresh-mypy",
+      "exit_code": 0
+    },
+    {
+      "check": "fresh-default-browser",
+      "exit_code": 0
+    },
+    {
+      "check": "fresh-fidelity",
+      "exit_code": 0
+    },
+    {
+      "check": "payload-final",
+      "exit_code": 0
+    }
+  ],
+  "fresh_python_cases": 197,
+  "fresh_python_coverage": {
+    "covered_lines": 3202,
+    "num_statements": 3202,
+    "percent_covered": 100.0,
+    "percent_covered_display": "100.00",
+    "missing_lines": 0,
+    "excluded_lines": 0,
+    "percent_statements_covered": 100.0,
+    "percent_statements_covered_display": "100.00",
+    "num_branches": 1000,
+    "num_partial_branches": 0,
+    "covered_branches": 1000,
+    "missing_branches": 0,
+    "percent_branches_covered": 100.0,
+    "percent_branches_covered_display": "100.00"
+  },
+  "incoming_unchanged": true,
+  "verification_wrapper_correction": {
+    "original_attempt": "fresh-verification-v0.1.5",
+    "original_status": "TIMEOUT_AT_480_SECONDS_NOT_A_TEST_PASS",
+    "prior_successful_suite_seconds": 545.95,
+    "correction": "Fresh isolated coverage and logs; live output; outer timeout 1100s, Linux process-group bound 1050s plus 15s termination grace. Product limits and assertions unchanged.",
+    "corrected_wrapper_sha256": "c014750deff0a46ade4804f564bafdae6a8831413dbd827d43ecbb16e27b030e",
+    "corrected_wrapper_file": "RETROFIT_EVIDENCE_M1_REPAIR_v0.1.5_VERIFY.py",
+    "archive_modified": false
+  },
+  "limitations": [
+    "Complete frontend line/branch evidence was collected before packaging against this exact source hash.",
+    "M1 human/evaluator acceptance, D6 and release remain withheld; coverage alone does not promote Stage 6.",
+    "Pinned runtimes/model assets reused; not a fresh network dependency installation.",
+    "No paid calls; only controlled synthetic local data."
+  ],
+  "log_hashes": {
+    ".coverage": "dc34d6bdf644eb961df568ec536840f7537c2598f99d1891cec666d520612238",
+    "coverage.json": "499d226b1c093935a9231ec7d1c0da559947f2321c4a9792c60f8d46af128bd4",
+    "fidelity/CHECKS.json": "fffb0dc7d81cd9ec6bca0f45cb687a00bdf18208decf878b8403ad1ce19aafb4",
+    "fidelity/COVERAGE.json": "e1ad3227c50a68ade77a5429f94cfe49e7eabae54b9070f3675ae11dd23ad137",
+    "fresh-coverage-combine.txt": "de11c7b4bd89ae924308c5fdb72d177889d83ce1751532ef74f2345549a3e0ea",
+    "fresh-coverage-json.txt": "d5dc7181fb3eb24f84aaa78ecff2bfd9b6fe34a20e6c8a446681362880a67fc9",
+    "fresh-coverage-report.txt": "105ce3e6030aaeddfcc042164ae45853782053fb409909c8a9e804194652c928",
+    "fresh-default-browser.txt": "7abec66c1bd5b4e5c7085def57c296612a112bdef2203a47f8faa5b57e53e722",
+    "fresh-fidelity.txt": "58e01d01763165f65ae06ea9513f3db31a693b3c863ce3d183abd7673f599688",
+    "fresh-mypy.txt": "df31673ff938e9a6a603c56cfd13949b42c1b8edcba9d2688c7f771f48c449d9",
+    "payload-after-rebuild.txt": "e5433020c6734e1dda319f074250f43636023893b8aa1a1968e009a9b4e73e34",
+    "payload-before.txt": "e5433020c6734e1dda319f074250f43636023893b8aa1a1968e009a9b4e73e34",
+    "payload-final.txt": "e5433020c6734e1dda319f074250f43636023893b8aa1a1968e009a9b4e73e34",
+    "pytest.xml": "70107a605daa73ee9ac965cfdc937bc9ec76ffba755dee8f8329475f44b491f2",
+    "python-fresh-tests.txt": "8af3343a5baa06ef8c2e912771dea3be8e097aae925f580e3121e13973617b00",
+    "typescript-check.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "typescript-rebuild.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}

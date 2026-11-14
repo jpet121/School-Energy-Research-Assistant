@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="retrofit-session" content="SESSION_TOKEN">
+  <title>Retrofit Evidence</title>
+  <link rel="stylesheet" href="/assets/workbench.css">
+  <script type="module" src="/assets/workbench.js"></script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to workspace</a>
+  <header class="site-header">
+    <div class="brand"><span class="mark" aria-hidden="true">RE</span><span>Retrofit Evidence</span></div>
+    <p id="active-collection">No published collection</p>
+  </header>
+  <nav id="workspace-nav" aria-label="Workspace">
+    <a href="#catalog" aria-current="page">Sources</a>
+    <a href="#research">Research</a>
+    <a href="#draft">Drafts</a>
+    <a href="#evaluation">Evaluation</a>
+    <a href="#controls">Local controls</a>
+  </nav>
+  <main id="main" tabindex="-1">
+    <div id="status" role="status" aria-live="polite" aria-atomic="true"></div>
+    <div id="error" role="alert" aria-atomic="true"></div>
+    <section id="catalog" aria-labelledby="catalog-heading">
+      <h1 id="catalog-heading" tabindex="-1">Sources</h1>
+      <div class="workspace-grid">
+        <div class="panel">
+          <h2>Admit a public PDF</h2>
+          <p>Choose a local copy and record where it came from and what may be used. Private school or district documents are outside this collection.</p>
+          <form id="admission">
+            <label>PDF file <input type="file" name="pdf" accept="application/pdf,.pdf" required></label>
+            <label>Document title <input name="title" maxlength="300" required></label>
+            <label>Publisher <input name="publisher" maxlength="300" required></label>
+            <label>Source URL <input name="source_url" type="url" required></label>
+            <label>Publication date <input name="publication_date" type="date"></label>
+            <label>Reason if date is unknown <input name="unknown_reason" maxlength="500"></label>
+            <label>Research scope <input name="scope" maxlength="500" required></label>
+            <label>Permitted use <textarea name="use_basis" rows="2" maxlength="1000" required></textarea></label>
+            <fieldset>
+              <legend>Pages covered by this use disposition</legend>
+              <div class="fields">
+                <label>First PDF page <input name="first_page" type="number" min="1" max="500" value="1" required></label>
+                <label>Last PDF page <input name="last_page" type="number" min="1" max="500" value="1" required></label>
+              </div>
+            </fieldset>
+            <label class="check"><input name="public_document" type="checkbox" required> I verified that this is a public document.</label>
+            <button type="submit">Stage PDF</button>
+          </form>
+        </div>
+        <div class="panel">
+          <h2>Source catalog</h2>
+          <div id="sources"><p>No PDFs have been staged. Use the admission form to add a source.</p></div>
+          <h2>Collection snapshots</h2>
+          <div id="snapshots"></div>
+        </div>
+      </div>
+    </section>
+    <section id="staging" aria-labelledby="staging-heading" hidden>
+      <h1 id="staging-heading" tabindex="-1">Staged extraction</h1>
+      <button id="back-to-catalog" type="button" class="secondary">Back to sources</button>
+      <div id="staging-content" class="stack"></div>
+    </section>
+    <section id="research" aria-labelledby="research-heading" hidden>
+      <h1 id="research-heading" tabindex="-1">Research</h1>
+      <div class="workspace-grid">
+        <div class="panel">
+          <form id="search-form">
+            <label>Research question <textarea id="question" name="question" rows="3" maxlength="2000" required></textarea></label>
+            <label>Optional research context <textarea id="query-context" name="context" rows="2" maxlength="2000"></textarea></label>
+            <label>Retrieval mode
+              <select id="retrieval-mode" name="mode">
+                <option value="lexical">Lexical</option>
+                <option value="dense">Dense</option>
+                <option value="hybrid">Hybrid</option>
+              </select>
+            </label>
+            <p id="retrieval-help" class="meta"></p>
+            <div class="actions">
+              <button type="submit">Search evidence</button>
+              <button id="cancel-query" type="button" class="secondary" disabled>Cancel search</button>
+            </div>
+          </form>
+          <button id="hosted-review" type="button" class="secondary" disabled>Review hosted input</button>
+          <p id="generation-note" class="meta">Generation starts disabled. Search and manual drafts are available locally.</p>
+        </div>
+        <div class="panel">
+          <h2>Evidence results</h2>
+          <div id="search-results"><p>Publish a snapshot, then search its eligible evidence.</p></div>
+          <div id="generated-answer"></div>
+        </div>
+      </div>
+    </section>
+    <section id="evaluation" aria-labelledby="evaluation-heading" hidden>
+      <h1 id="evaluation-heading" tabindex="-1">Evaluation</h1>
+      <div class="workspace-grid">
+        <div class="panel">
+          <h2>Evaluation report</h2>
+          <p>Import the aggregate output of the external evaluator. Gold labels stay in evaluator custody.</p>
+          <label>Evaluator report file <input id="evaluation-file" type="file" accept="application/json,.json"></label>
+          <button id="import-report" type="button">Import report</button>
+          <label>Saved report <select id="report-select"></select></label>
+          <label>Held-out repetition <select id="report-repetition"><option value="1">1</option><option value="2">2</option><option value="3">3</option></select></label>
+        </div>
+        <div class="panel" id="evaluation-report"><p>No evaluation evidence has been imported.</p></div>
+      </div>
+    </section>
+    <section id="draft" aria-labelledby="draft-heading" hidden>
+      <h1 id="draft-heading" tabindex="-1">Drafts and export</h1>
+      <div class="workspace-grid">
+        <div class="panel">
+          <h2>Draft workspace</h2>
+          <p>Manual claims and semantic support require human review.</p>
+          <label>Draft text <textarea id="draft-text" rows="13" maxlength="128000"></textarea></label>
+          <div class="actions">
+            <button id="save-draft" type="button">Save draft revision</button>
+            <button id="new-draft" type="button" class="secondary">New draft</button>
+            <button id="undo-draft" type="button" class="secondary" disabled>Undo to parent</button>
+          </div>
+          <div id="draft-mappings"></div>
+        </div>
+        <div class="panel">
+          <h2>Saved drafts</h2>
+          <div id="saved-drafts"></div>
+          <h2>Download a draft</h2>
+          <label>Saved revision <select id="draft-revision"></select></label>
+          <label>File format
+            <select id="export-format"><option value="markdown">Markdown</option><option value="json">JSON</option></select>
+          </label>
+          <button id="prepare-export" type="button" disabled>Prepare download</button>
+        </div>
+      </div>
+    </section>
+    <section id="controls" aria-labelledby="controls-heading" hidden>
+      <h1 id="controls-heading" tabindex="-1">Local controls</h1>
+      <div class="workspace-grid">
+        <div class="panel">
+          <h2>Parser limits</h2><div id="parser-info"></div>
+          <h2 id="generation-heading" tabindex="-1">Generation and reservations</h2><div id="generation-info"></div>
+          <h2>Cleanup</h2>
+          <button id="preview-cleanup" type="button" class="secondary">Preview local cleanup</button>
+        </div>
+        <div class="panel">
+          <h2>Query record</h2><div id="run-info"><p>Run a search to inspect its provenance and outcome.</p></div>
+        </div>
+      </div>
+    </section>
+    <dialog id="workbench-dialog" aria-labelledby="dialog-title">
+      <div class="dialog-header">
+        <h2 id="dialog-title" tabindex="-1"></h2>
+        <form method="dialog"><button class="secondary">Close</button></form>
+      </div>
+      <div id="dialog-error" role="alert" aria-atomic="true"></div>
+      <div id="dialog-content"></div>
+    </dialog>
+  </main>
+</body>
+</html>

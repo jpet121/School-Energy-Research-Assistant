@@ -1,0 +1,19 @@
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.coverage.run]
+branch = true
+source = ["retrofit"]
+parallel = true
+sigterm = true
+
+[tool.coverage.report]
+fail_under = 100
+precision = 2
+exclude_lines = []
+
+[tool.mypy]
+python_version = "3.12"
+check_untyped_defs = true
+ignore_missing_imports = true
+warn_unused_ignores = true
