@@ -1,5 +1,0 @@
-source_id,original_sha256,historical_page_count,pdf_page_1based,printed_label,review_focus,approved_span_ids,use_basis_reference,excluded_regions,reviewer_id,decision,reviewed_at_utc,evidence_path
-C1,beb595c796dcd89d2e8aff83186a31b2f24c48252bd576f06dbd92301d4251db,214,73,59,Miami Table4-3: 22.2% EUI;21.3% cost; excludes EBCx; ligature QA,,,,,UNREVIEWED,,
-C2,4d7025e094e6bc2d3bc90e97f6fe17ea634dc67dc091c65bf85655fab0cb4137,132,78,62,HVAC body/sidebar separation and reading order,,,,,UNREVIEWED,,
-C3,9cf0adbc462c73b7ec20f97b21643ba709c2c7c4571ff6630a2d628d78e3147c,321,96,7.2,Override navigation xcvi; distinguish new/recommissioning,,,,,UNREVIEWED,,
-C4,faf3c2a2125c4174a09c907ebe67acab825e5a7057fdf2e9a67e9616b2234761,14,4,3,Type A 20% relative fluorescent; rotated label; column separation,,,,,UNREVIEWED,,

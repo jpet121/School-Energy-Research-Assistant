@@ -3,6 +3,11 @@ param([switch]$Stop, [switch]$NoBrowser)
 $ErrorActionPreference = 'Stop'
 $name = 'retrofit-evidence-desktop'
 $image = 'retrofit-evidence:0.2.0'
+$root = if (Test-Path -LiteralPath (Join-Path $PSScriptRoot 'Dockerfile')) {
+    $PSScriptRoot
+} else {
+    Split-Path -Parent $PSScriptRoot
+}
 $port = if ($env:RETROFIT_LOCAL_PORT) { [int]$env:RETROFIT_LOCAL_PORT } else { 8765 }
 $origin = "http://127.0.0.1:$port"
 function Invoke-Docker {
@@ -23,11 +28,11 @@ if ($LASTEXITCODE -ne 0) {
         '^(aarch64|arm64)$' { $arch = 'arm64' }
         default { throw "Unsupported Docker engine architecture $target." }
     }
-    $archive = Join-Path $PSScriptRoot "retrofit-evidence-linux-$arch.tar.gz"
+    $archive = Join-Path $root "retrofit-evidence-linux-$arch.tar.gz"
     if (Test-Path -LiteralPath $archive) {
         Invoke-Docker load --input $archive
     } else {
-        Invoke-Docker build --tag $image $PSScriptRoot
+        Invoke-Docker build --tag $image $root
     }
 }
 & docker container inspect $name 2>$null | Out-Null

@@ -15,6 +15,13 @@ essential=[root/"README.md", root/"Dockerfile",root/".dockerignore"]
 essential.extend(p for p in (root/"retrofit").rglob("*") if p.is_file() and "__pycache__" not in p.parts)
 essential.extend(p for p in (root/"deploy").glob("*") if p.is_file() and p.name!="review-starter.py")
 essential.extend([root/"tests/pdf_fixture.py",root/"evidence/factory-verification.json",root/"evidence/CANDIDATE_IDENTITY.json"])
+essential.extend(root / name for name in (
+    "evidence/distribution-verification.md",
+    "examples/school-energy-sample.pdf",
+    "examples/sample-draft.md",
+    "web/workbench.ts",
+))
+essential.extend(path for path in (root / "docs").rglob("*") if path.is_file())
 desktop={ "amd64": ["Start Retrofit Evidence.command","Stop Retrofit Evidence.command","Start Retrofit Evidence.cmd","Stop Retrofit Evidence.cmd","Start-RetrofitEvidence.ps1","start-linux.sh","stop-linux.sh"],
           "arm64": ["Start Retrofit Evidence.command","Stop Retrofit Evidence.command","Start Retrofit Evidence.cmd","Stop Retrofit Evidence.cmd","Start-RetrofitEvidence.ps1","start-linux.sh","stop-linux.sh"]}
 for arch, launchers in desktop.items():

@@ -2,7 +2,6 @@
   "archive": "RETROFIT_EVIDENCE_M1_REPAIR_v0.1.5.zip",
   "archive_sha256": "23ce65f2056e64b31f49df7c94b24950df422ff30e0e7f88fe06aa45b6677986",
   "source_identity": "sha256:f85684048b3bf8f83cc04382e80d38f7a0103b8cc77c074cd4aa7bea971640c1",
-  "fresh_extraction": "C:\\Users\\jpetr\\factory-work\\retrofit-intake-v0.1.3\\outputs\\fresh-v0.1.5\\retrofit-evidence-m1",
   "status": "PASS_INTEGRITY_BUILD_FULL_PYTHON_COVERAGE_TYPES_DEFAULT_BROWSER_FIDELITY",
   "checks": [
     {

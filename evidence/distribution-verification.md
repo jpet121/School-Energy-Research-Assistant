@@ -1,10 +1,19 @@
-# Distribution verification
+# Test results
 
-- The source files match every Factory v0.1.5 source hash.
-- Windows using WSL. The existing local workbench launches with parser isolation active and hosted generation disabled. Chrome passed 11 browser checks on the amd64 Docker distribution, including PDF upload, keyboard navigation, 200% and 400% reflow, original-region inspection and draft downloads.
-- Linux amd64 and arm64. Native Ubuntu runners independently built the runtime images and passed loopback authorization, sandbox probe, source extraction and rendering, review and publication, lexical search, draft creation and export. Evidence is in [GitHub Actions run 43625888169](https://github.com/jpet121/School-Energy-Research-Assistant/actions/runs/43625888169).
-- The arm64 isolation probe failed under QEMU user-mode emulation on the Windows host. The native arm64 test passed with the same parser and resource policy. The Mac launchers still need a Mac with a Linux VM or container engine.
-- Authenticated web preview. HTTPS sign-in and protection of static assets, API origin and token checks, real sandboxed PDF workflow and draft export passed on a disposable local Compose instance.
-- The Windows user store has four staged starter sources with verified original hashes. Independent application acceptance and publication of a qualified starter corpus remain pending.
+## App tests
 
-The distribution wraps the existing single-user workbench. A permanent HTTPS server, native app bundles, and Mac hardware validation remain pending. No paid provider calls were made.
+Factory ran 197 Python tests on a clean copy of the application. All tests passed. The coverage checks found no gaps in the measured Python or TypeScript lines or branches. [Factory test record](factory-verification.json). The record omits the local extraction path.
+
+## Local setup
+
+Chrome on Windows passed browser tests for PDF upload, keyboard use, source inspection, and draft export. The tests also checked the layout at 200% and 400% zoom.
+
+Linux tests passed on x64 and ARM64. The tests checked PDF isolation, full-text search, and draft export. [GitHub Actions results](https://github.com/jpet121/School-Energy-Research-Assistant/actions/runs/43625888169)
+
+The included sample went through the app workflow. The [screenshot](../docs/images/evidence-view.png) and [exported draft](../examples/sample-draft.md) come from that run.
+
+## Scope
+
+The local HTTPS test checked sign-in, access controls, search, and draft export. The Mac launchers still await testing on a Mac.
+
+The tests confirm software behavior with sample data. Formal review of the starter collection and hosted answer quality is pending. The tests made no paid model calls.

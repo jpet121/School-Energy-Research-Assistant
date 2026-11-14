@@ -1,7 +1,0 @@
-case,os_version,browser_version,AT_version,zoom,keystrokes,expected,actual_speech,focus_destination,tester,evidence_path,status
-native_picker_cancel,,,,,,No admission; form retained; focus returns,,,,,NOT_OBSERVED
-keyboard_search,,,,,,Named controls and loading/result announcement,,,,,NOT_OBSERVED
-evidence_and_qualifier,,,,,,Original page/label/qualifier identified; modal focus; Escape restores,,,,,NOT_OBSERVED
-draft_export,,,,,,Named download controls; correct status and focus,,,,,NOT_OBSERVED
-zoom_200_400,,,,,,Required journeys at 200%; no loss of function/reflow at400%,,,,,NOT_OBSERVED
-empty_no_evidence_provider_failure,,,,,,Distinct named states and recovery without color,,,,,NOT_OBSERVED

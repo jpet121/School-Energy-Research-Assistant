@@ -1,8 +1,0 @@
-category,required_units,verified_count,unit_register,snapshot_sha256,reviewer_id,audit_evidence,status
-HVAC,10,,,,,,UNMEASURED
-lighting,10,,,,,,UNMEASURED
-commissioning,10,,,,,,UNMEASURED
-complete_tables,5,,,,,,UNMEASURED
-multi_passage,5,,,,,,UNMEASURED
-hard_negatives,10,,,,,,UNMEASURED
-paired_assumptions,5,,,,,,UNMEASURED

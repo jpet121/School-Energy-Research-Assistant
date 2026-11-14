@@ -10,3 +10,4 @@ evidence/browser*/
 *.sqlite3*
 *.pdf
 .env*
+!/examples/school-energy-sample.pdf
